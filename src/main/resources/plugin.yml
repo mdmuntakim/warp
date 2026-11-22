@@ -1,0 +1,36 @@
+name: Warp
+version: '26.3'
+main: com.mdmuntakim.warp.WarpPlugin
+api-version: '26.3'
+description: Named warps and player teleport requests for Paper 26.3.
+author: mdmuntakim
+website: https://github.com/mdmuntakim/warp
+folia-supported: false
+
+commands:
+  warp:
+    description: Teleport to a named warp, or create, delete and list warps.
+    usage: /warp <name> | /warp create <name> | /warp del <name> | /warp list
+    aliases: [wp]
+    permission: warp.command
+  tpa:
+    description: Send a teleport request to another player.
+    usage: /tpa <player> [reason] | /tpa accept <player> | /tpa deny <player> | /tpa cancel <player>
+    permission: warp.tpa
+
+permissions:
+  warp.command:
+    description: Use the /warp help and /warp list commands.
+    default: op
+  warp.create:
+    description: Create named warps.
+    default: op
+  warp.delete:
+    description: Delete named warps.
+    default: op
+  warp.use:
+    description: Teleport to a named warp.
+    default: op
+  warp.tpa:
+    description: Send and answer teleport requests.
+    default: op

@@ -1,0 +1,5 @@
+# Warp configuration, Paper 26.3
+
+# How long a /tpa teleport request stays valid, in seconds, before it expires.
+teleport:
+  request-expiry-seconds: 30

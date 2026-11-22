@@ -1,0 +1,11 @@
+# Named warps of the Warp plugin, Paper 26.3.
+#
+# One entry per warp:
+#   <name>:
+#     owner: <player>
+#     world: <world>
+#     x: <x>
+#     y: <y>
+#     z: <z>
+#     yaw: <yaw>
+#     pitch: <pitch>
