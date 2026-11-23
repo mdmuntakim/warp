@@ -1,5 +1,5 @@
 name: Warp
-version: '26.3'
+version: '26.3.1'
 main: com.mdmuntakim.warp.WarpPlugin
 api-version: '26.3'
 description: Named warps and player teleport requests for Paper 26.3.
@@ -12,25 +12,26 @@ commands:
     description: Teleport to a named warp, or create, delete and list warps.
     usage: /warp <name> | /warp create <name> | /warp del <name> | /warp list
     aliases: [wp]
-    permission: warp.command
   tpa:
     description: Send a teleport request to another player.
     usage: /tpa <player> [reason] | /tpa accept <player> | /tpa deny <player> | /tpa cancel <player>
-    permission: warp.tpa
 
+# Every command is available to every player by default. The nodes below exist
+# only so a server owner can restrict an individual action on purpose; a normal
+# player needs no permission and an operator needs no additional grant.
 permissions:
   warp.command:
     description: Use the /warp help and /warp list commands.
-    default: op
+    default: true
   warp.create:
     description: Create named warps.
-    default: op
+    default: true
   warp.delete:
     description: Delete named warps.
-    default: op
+    default: true
   warp.use:
     description: Teleport to a named warp.
-    default: op
+    default: true
   warp.tpa:
     description: Send and answer teleport requests.
-    default: op
+    default: true

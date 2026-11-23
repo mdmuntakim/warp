@@ -3,7 +3,7 @@
 Named warps and player teleport requests for a **PaperMC Minecraft server**, shipped as a single plugin jar for **Paper 26.3** (Minecraft 26.3) on **Java 25**.
 
 ```
-plugins/warp-26.3.jar
+plugins/warp-26.3.1.jar
 ```
 
 ## What it does
@@ -23,7 +23,7 @@ Every request expires on its own, so nobody is stuck waiting forever.
 
 ## Commands
 
-| Command | Permission | What it does |
+| Command | Optional permission | What it does |
 | --- | --- | --- |
 | `/warp <name>` | `warp.use` | Teleport to a saved warp |
 | `/warp create <name>` | `warp.create` | Save the current position as a warp |
@@ -34,7 +34,11 @@ Every request expires on its own, so nobody is stuck waiting forever.
 | `/tpa deny <player>` | `warp.tpa` | Deny a pending request |
 | `/tpa cancel <player>` | `warp.tpa` | Cancel your own pending request |
 
-`/wp` is an alias of `/warp`. All permissions default to operators.
+`/wp` is an alias of `/warp`. Every command works for every player without an
+operator rank: all permissions default to `true` and the command entries do not
+require a permission, so `/warp` and `/tpa` are listed and runnable by everyone.
+The permission nodes stay available so an owner can restrict a single action on
+purpose.
 
 ## Configuration
 
@@ -62,7 +66,7 @@ home:
 
 ```bash
 mvn -B verify
-# target/warp-26.3.jar
+# target/warp-26.3.1.jar
 ```
 
 or `./build.sh`, which also runs `tools/verify-jar.sh`.
